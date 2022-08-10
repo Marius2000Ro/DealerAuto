@@ -1,0 +1,16 @@
+RewriteEngine On
+
+    # Sterge '/' care sunt in plus
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    #Stergem extensia .php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^(.*)$ $1.php
+
+
+
+    #Daca utilizatorul introduce o pagina ce nu exista il duce pe pagina 404
+    ErrorDocument 404 http://localhost/LicentaFrentMariusGeorgian/404.php

@@ -1,0 +1,843 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+
+}
+/* -------------- POP -UP REZERVARE MASINA */
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Buton deschidere form */
+.open-button {
+  background-color: #4BB453;
+  color: rgb(223, 28, 28);
+  padding: 0px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  /* position: fixed; */
+  bottom: 50px;
+  right: 937px;
+  width: 265px;
+  height: 40px;
+  margin-left: 20px;
+}
+
+/* Popup form - ascuns default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 120px;
+  right: 700px;
+  border: 30px solid #9e2020;
+  z-index: 9;
+}
+.modal__content {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
+/* Container form style */
+.form-container {
+  max-width: 370px;
+  padding: 15px;
+  background-color: white;
+}
+
+/* Dimensiune completa butoane input*/
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Cand suntem pe input sa faca ceva */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Style pentru butoane deschidere */
+.form-container .btn {
+  background-color: red;
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+  width: 24rem;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+.container {
+  width: none !important;
+}
+
+/*Rosu pentru botnul de inchidere*/
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Efecte butoane */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+/* SFARSIT POP-UP REZERVARE MASINA  */
+
+/* Eroare pop-up daca este deja rezervata o masina in data aleasa */
+.eroare{
+  background:red!important;
+}
+.card{
+  margin-top: 14rem;
+  margin-bottom: 14rem;
+  font-size: 200%!important;
+}
+.img-down{
+  width:100px!important;
+}
+body{
+    line-height: 1.5;
+}
+.card-wrapper{
+    margin-top: 20rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.img-display{
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-content{
+    padding: 2rem 1rem;
+}
+.product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+    font-size: 35px!important;
+}
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+.product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+.product-link:hover{
+    opacity: 0.9;
+}
+.product-rating{
+    color: #ffc107;
+}
+.product-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.product-price{
+    margin: 1rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    text-decoration: line-through;
+}
+.new-price span{
+    color: #256eff;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+h2{
+  font-size: 20px!important;
+}
+.product-detail p{
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: .2rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info{
+    margin: 1.5rem 0;
+}
+.purchase-info input,
+.purchase-info .btn{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+.purchase-info input{
+    margin-top:10px;
+    width: 150px;
+}
+.purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+}
+.purchase-info .btn:first-of-type{
+    background: #256eff;
+}
+.purchase-info .btn:last-of-type{
+    background: #f64749;
+}
+.purchase-info .btn:hover{
+    opacity: 0.9;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+    margin-left: 33rem;
+}
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3.5rem;
+        height: 85rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/*Pozitionare container imagini  */
+.container {
+  position: relative;
+  width:700px;
+  height: 750px !important;
+}
+
+
+/* Imagini ascunse default */
+.mySlides {
+  display: none;
+}
+
+/* Cand suntem pe imagini */
+.cursor {
+  cursor: pointer;
+}
+
+/* Inainte & inapoi  */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Pozitionare buton inainte */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Numarul text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container pentru imaginea text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row{
+  margin-left:5px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 24.5%;
+}
+
+/* Efect transparent pentru pozele mici */
+.demo {
+  opacity: 0.6;
+  height:100px;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.mySlides>img{
+  width:100%!important;
+}
+
+/* Footer */
+
+
+.footer{
+  background: #333;
+ margin-top: 140px;
+ 
+}
+
+.footer .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5 rem;
+  
+}
+
+.footer .box-container .box{
+  padding: 1rem 0;
+  flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+  font-size: 2.5rem;
+  padding: .7rem 0;
+  color: #fff;
+}
+
+.footer .box-container .box p{
+  font-size: 1.5rem;
+  padding: .7rem 0;
+  color: #eee;
+  width: 100%;
+}
+
+.footer .box-container .box a{
+  display: block;
+  font-size: 1.5rem;
+  padding: .7rem 0;
+  color: #eee;
+}
+
+.footer .box-container .box a:hover{
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+
+.vehicule .heading {
+margin-top: 8rem;
+}
+
+.btnsuccess{
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 1rem;
+  background: rgb(14, 197, 14) !important;
+  color: var(--black);
+  cursor: pointer;
+  font-size: 1.7rem;
+  border-radius: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+.btnwarning{
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.3rem 1rem;
+  background: red !important;
+  color: var(--black);
+  cursor: pointer;
+  font-size: 1.7rem;
+  border-radius: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  margin-top: 11rem;
+}
+ /* /// Style pentru comentarii //  */
+ .reply-comment{
+  margin-left: 25%;
+  background:#f0eded !important;
+  
+}
+
+.card-comment {
+  background: #f0eded!important;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0px solid transparent;
+  border-radius: 0px;
+  margin-left: -10rem;
+  width: 99rem;
+}
+
+.card-comment-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem
+}
+
+.card-comment .card-comment-title {
+  position: relative;
+  font-weight: 600;
+  margin-bottom: 10px
+} 
+
+.comment-widgets {
+  position: relative;
+  margin-bottom: 10px;
+  margin-left:25%;
+  background: #f0eded!important;
+}
+
+.comment-widgets .comment-row {
+  border-bottom: 1px solid transparent;
+  padding: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+ 
+}
+
+.comment-row{
+  margin-left:25%!important;
+  background: #f0eded!important;
+}
+
+.p-2 {
+  padding: 0.5rem !important
+}
+
+.comment-text {
+  padding-left: 15px
+}
+
+.w-100 {
+  width: 100% !important
+}
+
+.m-b-15 {
+  margin-bottom: 15px
+} 
+
+.btn-sm {
+color: #fff;
+  border-color: red;
+  font-size: 17px;
+  background: red;
+  border-radius: 20px;
+}
+.btn-sm:hover{
+color: #fff;
+background: #da6156;
+border-color: #e32614;
+}
+.btn-cyan {
+  color: #fff;
+  border-color: #43a7d3;
+  font-size: 17px;
+  background: #27a9e3;
+  border-radius: 20px;
+}
+
+.btn-cyan:hover {
+  color: #fff;
+  background-color: #1a93ca;
+  border-color: #198bbe;
+}
+
+.comment-row:hover {
+  background: #d0d4cf!important;
+} 
+
+.btn-add{
+color: #fff;
+  border-color: #12b509;
+  font-size: 17px;
+  background: #12b509;
+  border-radius: 20px;
+}
+.btn-add:hover{
+color: #fff;
+background: #13ed07;
+border-color: #13ed07;
+}
+.card-add-comment:hover{
+background: #d0d4cf;
+}
+/* // Sfarsit style pentru comentarii //  */
+
+
+
+/* // style pentru calendar */
+html, body {
+  font-size: 11px !important;
+  
+}
+
+  .w3-modal-content{
+    margin-top:7rem !important;
+  }
+      .container {
+          font-family: 'Montserrat', sans-serif;
+          margin: 4px auto;
+          width: 689px;
+          height: 694px;
+          background: #dedfe0;
+          padding-right: 0px;
+          padding-left: 0px;
+      }
+      
+      .list-inline {
+          text-align: center;
+          background: #9b9d9e;
+
+      }
+     .text-right{
+      background: #9b9d9e;
+     
+
+     }
+      .title {
+          font-weight: bold;
+          font-size: 26px;
+          background: #9b9d9e;
+      }
+      th {
+          text-align: center;
+      }
+      td {
+          height: 100px;
+      }
+      th:nth-of-type(6), td:nth-of-type(6) {
+          color: blue;
+      }
+      th:nth-of-type(7), td:nth-of-type(7) {
+          color: blue;
+      }
+      .today {
+          background-color: #42eff5;
+      }
+      .reservation {
+          background-color: red;
+      }
+      .free {
+          background-color: green;
+      }
+
+
+
+
+      @media(max-width:444px){
+
+        .container{
+          width: 30rem;
+          margin-left: 0px;
+        }
+        .form-popup{
+          right: 20px;
+          margin-top: 301rem;
+        }
+        .descriere{
+          margin-left: 1rem!important;
+          width: 29rem !important;
+        }
+        .social-links{
+          margin-left: 1rem!important;
+        }
+        .w3-modal-content {
+          margin-top: 15rem !important;
+      }
+    }
+    @media(min-width:445px){
+
+      .form-popup{
+        right: 208px;
+      }
+      .descriere{
+        margin-left: 1rem!important;
+      }
+      .social-links{
+        margin-left: 1rem!important;
+      }
+      .w3-modal-content {
+        margin-top: 15rem !important;
+    }
+  }
+
+  @media(min-width:576px){
+
+    .form-popup{
+      right: 400px;
+    }
+    .w3-modal-content {
+      margin-top: 6rem !important;
+  }
+ 
+}
+@media(min-width:1200px){
+
+  .form-popup{
+    right: 800px;
+  }
+  .w3-modal-content {
+    margin-top: 6rem !important;
+}
+.descriere{
+  margin-left: 34rem!important;
+}
+.social-links{
+  margin-left: 33rem!important;
+}
+}
+    
+    
+
+
+
+
+
+/* MODAL ISTORIC VEHICUL */
+
+.modal-trigger{
+  text-decoration: none;
+  padding: 8px 66px;
+  background:yellow;
+  border-radius:3px;
+  color:black;
+  margin-left: 20px;
+}
+.modal{
+  display:none;
+  background:rgba(0, 0, 0, .8);
+  position:fixed;
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+}
+.modal:target{
+  display:table;
+}
+.modal__dialog{
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.modal__content{
+  background:rgb(255, 255, 255);
+  width:85%;
+  min-width:300px;
+  margin:auto;
+  position:relative;
+  padding: 2rem !important;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.modal__header{
+  background:#2980b9;
+  color:rgba(255, 255, 255, 0.8);
+  padding:1rem;
+  position:relative;
+}
+.modal__title{
+  margin:0;
+}
+.modal__close{
+  color:#fff;
+  text-decoration: none;
+  position:absolute;
+  top:1rem;
+  right:1rem;
+}
+
+.modal__text{
+  padding:0 1rem;
+  line-height:1.5;
+}
+.modal__footer{
+  padding:1rem;
+  border-top:1px solid #ccc;
+}
+
+
+
+@media(max-width:925px){
+
+  .modal__content{
+    width:72rem;
+    min-width:300px;
+    margin-left: 30px;
+ 
+  }
+}
+@media(max-width:847px){
+
+  .modal__content{
+    width:53rem;
+    min-width:300px;
+    margin-left: 30px;
+ 
+  }
+}
+@media(max-width:601px){
+
+  .modal__content{
+    width:44rem;
+    min-width:300px;
+    margin-left: 1px;
+ 
+  }
+}
+
+@media(max-width:500px){
+
+  .modal__content{
+    width:39rem;
+    min-width:300px;
+    margin-left: 1px;
+ 
+  }
+}

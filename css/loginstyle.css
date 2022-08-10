@@ -1,0 +1,199 @@
+
+        html {
+            /* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            font-family: 'Numans', sans-serif;
+        }
+        
+        .body-content {
+            padding-top: 10vh;
+        }
+        input, textarea, p {
+            background: green;
+            height: 40px;
+            width: 192px;
+            border: 2px solid White;
+            border-radius: 15px;
+            font-size: 17px;
+         }
+      
+
+        #background-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        }
+
+        .container {
+            width: 400px;
+            height: 532px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            border: 2px solid White;
+            border-radius: 15px;
+            background-color: rgba(0,0,0,0.5) !important;
+            margin-top: 60px;
+           
+        }
+        
+        .logo {
+            margin-top: 0px;
+            padding-top: 0;
+        }
+        
+        .logo img {
+            width: 100px;
+            border-radius: 50px;
+        }
+        
+        h2 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-item {
+            margin: 5px;
+            padding-bottom: 10px;
+            display: flex;
+        }
+        
+        .form-item label {
+            display: block;
+            padding: 2px;
+            font-size: 20px;
+            width: 100px;
+        }
+        
+        .form-item input {
+            width: 300px;
+            height: 35px;
+            border: 2px solid #e1dede69;
+            border-radius: 20px;
+            background: white;
+            color: black;
+            text-align: center;
+        }
+        
+        .remember-box {
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            color: white;
+        }
+      
+        
+        .remember-box a {
+            text-decoration: none;
+            color: white;
+            margin-left:30px;
+
+        }
+        .remember-box a:hover {
+            color:grey;
+        }
+        
+        .form-btns {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding: 10px 0;
+        }
+        
+        .form-btns button {
+            margin: auto;
+            font-size: 20px;
+            padding: 5px 15px;
+            border: 0;
+            border-radius: 15px;
+            color: rgb(75, 61, 61);
+            background: #fbba50;
+            width: 280px;
+            cursor: pointer;
+        }
+        .form-btns button:hover {
+            background: #d88a0c;
+            color: antiquewhite;
+        }
+        
+        .options {
+            padding-top: 15px;
+            margin: auto;
+        }
+        
+        .options a {
+            text-decoration: none;
+            color: white;
+            margin: 0 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            background: rgb(255, 196, 0);
+            color: white;
+            font-size: 20px;
+        }
+        .options a:hover {
+            color:grey;
+        }
+        
+        p {
+            text-align: center;
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        input{
+            text-transform: none!important;
+        }
+
+
+        .alert {
+            margin-top: 70px;
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+          }
+          
+          .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+          }
+          
+          .closebtn:hover {
+            color: black;
+          }
+
+
+
+
+          @media(max-width:450px){
+
+            .container{
+                width: 323px;
+                height: 760;
+            }
+           html{
+               background-repeat: repeat;
+           }
+           }
+          
